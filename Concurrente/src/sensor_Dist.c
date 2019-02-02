@@ -26,6 +26,7 @@
 #include <math.h>
 #include <time.h>
 #include <pthread.h> 
+#include "conf.h"
 
 #define SHMSZ     27
 #define MAX_SAMPLES 100
@@ -40,9 +41,9 @@ void *iniciarSensor(void *vargp);
  
 int main(int argc,char * argv[]) {
 	pthread_t tid1,tid2,tid3; 
-	int key1 = 1111;
-	int key2 = 2222;
-	int key3 = 3333;
+	int key1 = KEY_DIST_1;
+	int key2 = KEY_DIST_2;
+	int key3 = KEY_DIST_3;
     pthread_create(&tid1, NULL, iniciarSensor, (void *)&key1); 
     pthread_create(&tid2, NULL, iniciarSensor, (void *)&key2); 
     pthread_create(&tid3, NULL, iniciarSensor, (void *)&key3); 
